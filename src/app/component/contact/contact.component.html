@@ -1,0 +1,24 @@
+<section class="hero is-primary is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">Contact</h1>
+            <!-- form here -->
+            <form (ngSubmit)="onForm()">
+                <div class="field">
+                    <input type="text" name="name" id="" class="input" placeholder="Name here ..." [(ngModel)]="name" required minlength="3" #nameInput="ngModel"/>
+                    <div class="help is-error" *ngIf="nameInput.invalid && nameInput.dirty">Your name is required & must be comport 3 letters !</div>
+                </div>
+                <div class="field">
+                    <input type="email" name="email" id="" class="input" placeholder="Email here ..." [(ngModel)]="email" required email #emailInput="ngModel"/>
+                    <div class="help is-error" *ngIf="emailInput.invalid && emailInput.dirty">Your email is required & must be comport an @ !</div>
+                </div>
+                <div class="field">
+                    <textarea name="message" id="" class="input" placeholder="Your message ..." [(ngModel)]="message" required #messageInput="ngModel"></textarea>
+                </div>
+
+                    <button type="submit" class="button is-danger is-large">Collect your first Bitcoin</button>
+                
+            </form>
+        </div>
+    </div>
+</section>

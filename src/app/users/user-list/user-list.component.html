@@ -1,0 +1,18 @@
+<section class="section">
+    <div class="container">
+        <div class="columns is-multiline">
+            <!-- loop users  -->
+            <div class="column is-4" *ngFor="let user of users | async">
+                <!-- On liste les users en asynchrone -->
+                <div class="card" >
+                    <div class="card-content">
+                        <a routerLink="/users/{{user.login}}">{{user.login}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
